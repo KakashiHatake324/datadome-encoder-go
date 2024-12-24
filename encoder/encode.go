@@ -9,9 +9,11 @@ import (
 )
 
 var (
-	_hsv             = "window._hsv"
-	seed             = 4046101435
-	interstitialSeed = int32(seed)
+	_hsv                   = "window._hsv"
+	interstitialSeed int32 = func() int32 {
+		seed := 4046101435
+		return int32(seed)
+	}()
 )
 
 type PseudoRandom struct {
